@@ -42,7 +42,10 @@ my issue https://github.com/antlr/grammars-v4/issues/3412
 	javac *.java
 	grun CSharp compilation_unit examples/C2430.cs -tree
 
+To Build the grammars-v4/csharp/target/csharp-1.0-SNAPSHOT.jar
 
+	mvn package
+	
 ### Typescript
 my issue https://github.com/antlr/grammars-v4/issues/3413
 (resolved - started to work ok the next morning, weird!)
@@ -58,7 +61,9 @@ or
 
 	cat examples/Function.ts | grun TypeScript program -gui
 
+To Build the /grammars-v4/javascript/typescript/target/typescript-1.0-SNAPSHOT.jar
 
+	mvn package
 
 ## FAQ
 
