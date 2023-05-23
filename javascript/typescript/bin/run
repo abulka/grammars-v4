@@ -1,0 +1,2 @@
+echo Run this command to see the AST of a TypeScript program:
+echo grun TypeScript program examples/Class.ts -tree
