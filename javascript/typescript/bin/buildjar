@@ -1,2 +1,20 @@
 echo $JAVA_HOME
 mvn package
+
+# remove extra classes that were introduced by the maven relocate plugin
+rm -rf target/unpacked/
+unzip target/typescript-1.0-SNAPSHOT.jar -d target/unpacked
+cd target/unpacked
+rm -rf org/hamcrest/
+rm -rf org/junit/
+rm -rf junit/
+rm -rf org/antlr/
+rm LICENSE-junit.txt
+rm LICENSE.txt
+rm -rf META-INF/maven/org.antlr/
+jar cfm ../typescript-1.0-andy.jar META-INF/MANIFEST.MF *
+cd ../..
+
+# view
+# jar tf target/typescript-1.0-SNAPSHOT.jar|less
+jar tf target/typescript-1.0-andy.jar|less

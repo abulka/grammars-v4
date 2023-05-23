@@ -31,3 +31,4 @@ antlr4-*-complete.jar
 # Andy
 *.class
 
+javascript/typescript/dependency-reduced-pom.xml

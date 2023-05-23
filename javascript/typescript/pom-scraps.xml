@@ -1,0 +1,111 @@
+		<!-- Andy added https://maven.apache.org/plugins/maven-shade-plugin/usage.html -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-shade-plugin</artifactId>
+			<version>3.4.1</version>
+			<configuration>
+			<!-- put your configurations here -->
+
+			  <!-- Andy added  -->
+              <relocations>
+                <relocation>
+                  <pattern></pattern>
+                  <shadedPattern>org.example.</shadedPattern>
+
+                  <includes>
+                    <include>TypeScriptParser$SourceElementContext.class</include>
+                    <include>TypeScriptParser$TemplateStringLiteralContext.class</include>
+                  </includes>
+
+                </relocation>
+              </relocations>
+
+			</configuration>
+			<executions>
+			<execution>
+				<phase>package</phase>
+				<goals>
+				<goal>shade</goal>
+				</goals>
+			</execution>
+			</executions>
+		</plugin>
+        
+
+
+
+		<!-- Andy added - doesn't work either -->
+		<plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-jar-plugin</artifactId>
+		  <version>3.2.0</version>
+		  <configuration>
+		    <excludes>
+		      <!-- Specify the classes you want to exclude -->
+		      <exclude>org/example/SomeClass.class</exclude>
+		      <exclude>com/example/AnotherClass.class</exclude>
+  			  <exclude>junit*</exclude>
+			  <exclude>org*</exclude>
+			  <exclude>org/antlr/v4/runtime/ANTLRErrorListener.class</exclude>
+		    </excludes>
+		  </configuration>
+		</plugin>
+
+
+
+
+		<!-- Andy added https://maven.apache.org/plugins/maven-shade-plugin/usage.html -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-shade-plugin</artifactId>
+			<version>3.4.1</version>
+			<configuration>
+			<!-- put your configurations here -->
+
+			  <!-- Andy added  -->
+              <relocations>
+                <relocation>
+                  <pattern></pattern>
+                  <shadedPattern>org.example.</shadedPattern>
+
+                  <excludes>
+                    <exclude>META-INF</exclude>
+                    <exclude>META-INF.MANIFEST.MF</exclude>
+                    <exclude>org.**</exclude>
+                    <exclude>org.antlr.v4.runtime.tree.pattern.*</exclude>
+                  </excludes>
+
+                </relocation>
+              </relocations>
+
+			</configuration>
+			<executions>
+			<execution>
+				<phase>package</phase>
+				<goals>
+				<goal>shade</goal>
+				</goals>
+			</execution>
+			</executions>
+		</plugin>
+
+
+
+                  <excludes>
+				    <!-- none of these work -->
+                    <exclude>junit*</exclude>
+                    <exclude>org*</exclude>
+					<exclude>**/junit/**</exclude>
+					<exclude>org/**</exclude>
+					<exclude>org/antlr/v4/runtime/*</exclude>
+					<exclude>org/antlr/v4/*</exclude>
+	      		    <exclude>org/antlr/v4/runtime/ANTLRErrorListener.class</exclude>
+                  </excludes>
+
+
+
+                    <!-- <include>TypeScriptParser$SourceElementContext</include>
+                    <include>TypeScriptParser$TemplateStringLiteralContext</include> -->
+
+
+
