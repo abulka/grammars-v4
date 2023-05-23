@@ -1,0 +1,29 @@
+rule com.google.** com.googleold.@1
+
+rule org.objectweb.asm.** com.google.monitoring.runtime.instrumentation.asm.@1
+rule com.google.common.flogger.** @0
+rule com.google.common.** com.google.monitoring.runtime.instrumentation.common.@0
+
+#JUNK ATTEMPTS
+rule *$* com.example.@1
+rule **$** com.example.@1
+rule TypeScriptParser$** com.example.@1
+rule TypeScriptParser$* com.example.@1
+rule TypeScriptParser$SourceElementContext com.example.@1
+rule TypeScriptParser\\$SourceElementContext com.example.@1
+rule TypeScriptParser$$SourceElementContext com.example.@1
+rule "TypeScriptParser$SourceElementContext" com.example.@1
+rule "TypeScriptParser\$SourceElementContext" com.example.@1
+rule "TypeScriptParser$$SourceElementContext" com.example.@1
+rule TypeScriptParser$* com.example.TypeScriptParser$@1
+rule TypeScriptParser$** com.example.TypeScriptParser$@1
+rule TypeScriptParser\$** com.example.TypeScriptParser$@1
+rule TypeScriptParser\$* com.example.TypeScriptParser$@1
+rule "TypeScriptParser$*" com.example.TypeScriptParser$@1
+rule "TypeScriptParser$**" com.example.TypeScriptParser$@1
+rule "TypeScriptParser$"* com.example.TypeScriptParser$@1
+rule "TypeScriptParser$"** com.example.TypeScriptParser$@1
+rule TypeScriptParser\$** com.example.TypeScriptParser$@1
+rule TypeScriptParser\$* com.example.TypeScriptParser$@1
+
+

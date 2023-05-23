@@ -3,7 +3,7 @@
 /**/.classpath
 /**/.settings/
 /**/target
-/**/bin
+#/**/bin
 
 # Visual Studio Generated
 .antlr

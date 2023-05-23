@@ -1,0 +1,11 @@
+#java -jar jarjar-1.4.jar process rules.txt google-collections-1.0.jar google-collections-old-1.0.jar
+java -jar "bin/jarjar-command-1.0.3.jar" --help
+java -jar "bin/jarjar-command-1.0.3.jar" --mode process --rules "bin/rules.txt" target/typescript-1.0-SNAPSHOT.jar --output target/typescript-1.0-SNAPSHOT_new.jar
+# java -jar "bin/jarjar-command-1.0.3.jar" --level JAR --mode process --rules "bin/rules.txt" target/typescript-1.0-SNAPSHOT.jar --output target/typescript-1.0-SNAPSHOT_new.jar
+echo "result"
+ls target/typescript-1.0-SNAPSHOT*.jar
+
+# pause for key
+# read -n 1 -s
+
+jar tf target/typescript-1.0-SNAPSHOT_new.jar |less
