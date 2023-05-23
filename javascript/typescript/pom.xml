@@ -67,7 +67,7 @@
 	              <relocations>
 	                <relocation>
 	                  <pattern></pattern>
-	                  <shadedPattern>org.example.</shadedPattern>
+	                  <shadedPattern>org.wware.</shadedPattern>
 	                  <includes>
 	                    <include>TypeScriptParser*</include>
 	                    <include>TypeScriptLexer*</include>
