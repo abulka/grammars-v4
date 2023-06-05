@@ -67,7 +67,7 @@
 	              <relocations>
 	                <relocation>
 	                  <pattern></pattern>
-	                  <shadedPattern>org.typescript.</shadedPattern>
+	                  <shadedPattern>org.andy.antlr.typescript.</shadedPattern>
 	                  <includes>
 	                    <include>TypeScriptParser*</include>
 	                    <include>TypeScriptLexer*</include>
