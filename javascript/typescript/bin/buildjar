@@ -12,9 +12,20 @@ rm -rf org/antlr/
 rm LICENSE-junit.txt
 rm LICENSE.txt
 rm -rf META-INF/maven/org.antlr/
-jar cfm ../typescript-1.0-andy.jar META-INF/MANIFEST.MF *
+jar cfm ../typescript-1.1-andy.jar META-INF/MANIFEST.MF *
 cd ../..
+
+# patch once more with module info - hmm doesn't work cos ./typescript/module-info.java won't compile in this dir
+
+#jdeps  --ignore-missing-deps --generate-module-info . target/typescript-1.1-andy.jar
+#creates typescript/module-info.java
+
+#javac -source 17 -target 17 --patch-module typescript=lib/typescript-1.1-andy.jar ./typescript/module-info.java
+#creates typescript/module-info.class
+
+#jar uf lib/typescript-1.1-andy.jar -C typescript module-info.class
+#puts module-info.class into the root of the jar
 
 # view
 # jar tf target/typescript-1.0-SNAPSHOT.jar|less
-jar tf target/typescript-1.0-andy.jar|less
+jar tf target/typescript-1.1-andy.jar|less

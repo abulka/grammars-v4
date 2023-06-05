@@ -8787,7 +8787,7 @@ public class TypeScriptParser extends TypeScriptParserBase {
 		public IdentifierOrKeyWordContext identifierOrKeyWord() {
 			return getRuleContext(IdentifierOrKeyWordContext.class,0);
 		}
-		public DecoratorContext decorator() {
+		public DecoratorContext accessibilityModifier() {
 			return getRuleContext(DecoratorContext.class,0);
 		}
 		public AccessibilityModifierContext accessibilityModifier() {
